@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:implocal="http://www.sat.gob.mx/implocal" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="3.0" serie="A" folio="28" fecha="2012-05-28T12:23:01" sello="D2B6Q2uavu4vfotRZ2kaKpSm0vZRXun+v+TqfJNcRregoQXAkRbqM1tshoWAYV8Vve6q55bXQBmjWZ8BApdWVKeleG3QUk8sRz6gB7pwQXQ8E5BFdzmCpAnEFON0XU+5oZXnP8/RVGobplMjiw1YhG6RIs3mt0LGOugQaUfNR3U=" formaDePago="PAGO EN UNA SOLA EXIBICION" noCertificado="30001000000100000800" certificado="MIIE/TCCA+WgAwIBAgIUMzAwMDEwMDAwMDAxMDAwMDA4MDAwDQYJKoZIhvcNAQEFBQAwggFvMRgwFgYDVQQDDA9BLkMuIGRlIHBydWViYXMxLzAtBgNVBAoMJlNlcnZpY2lvIGRlIEFkbWluaXN0cmFjacOzbiBUcmlidXRhcmlhMTgwNgYDVQQLDC9BZG1pbmlzdHJhY2nDs24gZGUgU2VndXJpZGFkIGRlIGxhIEluZm9ybWFjacOzbjEpMCcGCSqGSIb3DQEJARYaYXNpc25ldEBwcnVlYmFzLnNhdC5nb2IubXgxJjAkBgNVBAkMHUF2LiBIaWRhbGdvIDc3LCBDb2wuIEd1ZXJyZXJvMQ4wDAYDVQQRDAUwNjMwMDELMAkGA1UEBhMCTVgxGTAXBgNVBAgMEERpc3RyaXRvIEZlZGVyYWwxEjAQBgNVBAcMCUNveW9hY8OhbjEVMBMGA1UELRMMU0FUOTcwNzAxTk4zMTIwMAYJKoZIhvcNAQkCDCNSZXNwb25zYWJsZTogSMOpY3RvciBPcm5lbGFzIEFyY2lnYTAeFw0xMDA3MzAxNjU4NDBaFw0xMjA3MjkxNjU4NDBaMIGWMRIwEAYDVQQDDAlNYXRyaXogU0ExEjAQBgNVBCkMCU1hdHJpeiBTQTESMBAGA1UECgwJTWF0cml6IFNBMSUwIwYDVQQtExxBQUEwMTAxMDFBQUEgLyBBQUFBMDEwMTAxQUFBMR4wHAYDVQQFExUgLyBBQUFBMDEwMTAxSERGUlhYMDExETAPBgNVBAsMCFVuaWRhZCAxMIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDD0ltQNthUNUfzq0t1GpIyapjzOn1W5fGM5G/pQyMluCzP9YlVAgBjGgzwYp9Z0J9gadg3y2ZrYDwvv8b72goyRnhnv3bkjVRKlus6LDc00K7Jl23UYzNGlXn5+i0HxxuWonc2GYKFGsN4rFWKVy3Fnpv8Z2D7dNqsVyT5HapEqwIDAQABo4HqMIHnMAwGA1UdEwEB/wQCMAAwCwYDVR0PBAQDAgbAMB0GA1UdDgQWBBSYodSwRczzj5H7mcO3+mAyXz+y0DAuBgNVHR8EJzAlMCOgIaAfhh1odHRwOi8vcGtpLnNhdC5nb2IubXgvc2F0LmNybDAzBggrBgEFBQcBAQQnMCUwIwYIKwYBBQUHMAGGF2h0dHA6Ly9vY3NwLnNhdC5nb2IubXgvMB8GA1UdIwQYMBaAFOtZfQQimlONnnEaoFiWKfU54KDFMBAGA1UdIAQJMAcwBQYDKgMEMBMGA1UdJQQMMAoGCCsGAQUFBwMCMA0GCSqGSIb3DQEBBQUAA4IBAQArHQEorApwqumSn5EqDOAjbezi8fLco1cYES/PD+LQRM1Vb1g7VLE3hR4S5NNBv0bMwwWAr0WfL9lRRj0PMKLorO8y4TJjRU8MiYXfzSuKYL5Z16kW8zlVHw7CtmjhfjoIMwjQo3prifWxFv7VpfIBstKKShU0qB6KzUUNwg2Ola4t4gg2JJcBmyIAIInHSGoeinR2V1tQ10aRqJdXkGin4WZ75yMbQH4L0NfotqY6bpF2CqIY3aogQyJGhUJji4gYnS2DvHcyoICwgawshjSaX8Y0Xlwnuh6EusqhqlhTgwPNAPrKIXCmOWtqjlDhho/lhkHJMzuTn8AoVapbBUnj" subTotal="780.00" descuento="0.0" Moneda="MXN" total="799.00" tipoDeComprobante="ingreso" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3  http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv3.xsd http://www.sat.gob.mx/implocal http://www.sat.gob.mx/sitio_internet/cfd/implocal/implocal.xsd">
+    <cfdi:Emisor rfc="AAA010101AAA" nombre="Empresa Ejemplo S.A. de C.V.">
+        <cfdi:DomicilioFiscal calle="AV. LAZARO CARDENAS" noExterior="123" colonia="CHAPULTEPEC NORTE" localidad="MORELIA" municipio="MORELIA" estado="MICHOACAN DE OCAMPO" pais="MEXICO" codigoPostal="58260"/>
+    </cfdi:Emisor>
+    <cfdi:Receptor rfc="DIV0512021PA" nombre="DIVOX SA DE CV">
+        <cfdi:Domicilio calle="AV. LAZARO CARDENAS" noExterior="2231" colonia="CHAPULTEPEC NORTE" localidad="MORELIA" municipio="MORELIA" estado="MICHOACAN DE OCAMPO" pais="MEXICO" codigoPostal="58260"/>
+    </cfdi:Receptor>
+    <cfdi:Conceptos>
+        <cfdi:Concepto cantidad="15.00" unidad="PZA" noIdentificacion="fact" descripcion="facture" valorUnitario="20.00" importe="300.00"/>
+        <cfdi:Concepto cantidad="10.00" unidad="PZA" noIdentificacion="fact" descripcion="facture" valorUnitario="20.00" importe="200.00"/>
+        <cfdi:Concepto cantidad="5.00" unidad="PZA" noIdentificacion="fact" descripcion="FACTURE" valorUnitario="20.00" importe="100.00"/>
+        <cfdi:Concepto cantidad="3.00" unidad="PZA" noIdentificacion="fact" descripcion="facture" valorUnitario="20.00" importe="60.00"/>
+        <cfdi:Concepto cantidad="1.00" unidad="PZA" noIdentificacion="fact" descripcion="facture" valorUnitario="20.00" importe="20.00"/>
+        <cfdi:Concepto cantidad="5.00" unidad="PZA" noIdentificacion="fact" descripcion="facture" valorUnitario="20.00" importe="100.00"/>
+    </cfdi:Conceptos>
+    <cfdi:Complemento>
+        <implocal:ImpuestosLocales version="1.0" TotaldeRetenciones="0.00" TotaldeTraslados="3.00">
+            <implocal:TrasladosLocales ImpLocTrasladado="ISH" TasadeTraslado="3.00" Importe="3.00"/>
+        </implocal:ImpuestosLocales>
+    </cfdi:Complemento>
+</cfdi:Comprobante>
