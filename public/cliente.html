@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <h1 class="h3 mb-3 fw-normal text-center"> INTERFAZ DE INSERCIÓN DE CLIENTE </h1>
+        <div class=" d-flex justify-content-center">
+            <form id="xmlUpload" action="/insertarCliente" method="post" enctype="multipart/form-data">
+                <input type="file" name="xml" required>
+                <br><br>
+                <button type="submit" class="btn btn-primary w-100 py-2">EXTRAER DATOS DEL XML</button>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
