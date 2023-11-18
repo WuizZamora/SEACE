@@ -1,0 +1,110 @@
+body {
+    text-align: center;
+    background-color: #e3f2fd;
+}
+
+/* HEADER */
+header {
+    background-color: #A6E0FB;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.figure-nav{
+    padding: 2em;
+}
+
+.figure-nav img{
+    width: 5em;
+    height: auto;
+}
+
+.main-nav {
+    margin: 1em;
+    list-style: none;
+    font-size: 1.5em;
+    padding: 0.3em; /* Elimina el relleno para que los elementos no tengan espaciado adicional */
+    text-align: center; /* Centra los elementos en pantallas pequeñas */
+}
+
+.main-nav__item {
+    display: inline-block;
+    margin-bottom: 0.5em; /* Agrega un espacio entre los elementos de la lista */
+}
+
+.main-nav__item a {
+    color: black;
+    text-decoration: none;
+    padding: 1em; /* Ajusta el relleno para que sea más uniforme */
+    transition: font-size 0.3s ease;
+    display: block; /* Hace que los enlaces ocupen todo el ancho del contenedor */
+}
+
+.main-nav__item a:hover {
+    color: white;
+    font-size: 1.6rem;
+}
+
+.main-nav__item a:active {
+    color: #062232;
+}
+
+/* Media query para pantallas más pequeñas */
+@media screen and (max-width: 600px) {
+    .main-nav {
+        flex-direction: column; /* Apila los elementos en dirección vertical */
+        align-items: stretch; /* Estira los elementos para ocupar todo el ancho */
+    }
+
+    .main-nav__item {
+        margin-bottom: 0; /* Elimina el espacio entre elementos en pantallas pequeñas */
+    }
+}
+
+/* MAIN */
+main{
+    padding: 5em;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #062232;
+    text-align: center;
+    padding: 1em;
+    font-size: 1.6rem;
+    color: white;
+}
+
+table {
+    margin: auto;
+}
+
+.redes-sociales img {
+    width: 2em;
+    height: 2em;
+}
+
+.redes-sociales {
+    padding: 0.5em;
+}
+
+/* Media query para pantallas más pequeñas */
+@media screen and (max-width: 600px) {
+    table {
+        width: 100%; /* Hace que la tabla ocupe todo el ancho en pantallas pequeñas */
+    }
+
+    .redes-sociales {
+        display: block;
+        margin: auto;
+        text-align: center;
+    }
+
+    .redes-sociales img {
+        margin-bottom: 0.5em; /* Agrega espacio entre las imágenes */
+    }
+}
+
+

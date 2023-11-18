@@ -1,19 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>overview</title>
     <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
 </head>
+
 <body>
-    <h1 class="h3 mb-3 fw-normal text-center"> HOLA BIENVENIDO </h1>
-    <div class=" d-flex justify-content-center">
-        <form id="xmlUpload" action="/upload" method="post" enctype="multipart/form-data">
-            <input type="file" name="xml" required>
-            <br><br>
-            <button type="submit" class="btn btn-primary w-100 py-2">LEER XML</button>
-        </form>
-    </div>
+    <header>
+        <figure class="figure-nav">
+            <img src="/img/SEACE_SIN_FONDO.png" class="logo_header" alt="Logo SEACE">
+        </figure>
+        <nav>
+            <ul class="main-nav">
+                <li class="main-nav__item"><a href="/cliente.html">Clientes</a></li>
+                <li class="main-nav__item"><a href="#">Proovedores</a></li>
+                <li class="main-nav__item"><a href="#">Inventario</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <h1 class="h3 mb-3 fw-normal text-center"> HOLA BIENVENIDO </h1>
+        <div class=" d-flex justify-content-center">
+            <form id="xmlUpload" action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="xml" required>
+                <br><br>
+                <button type="submit" class="btn btn-primary w-100 py-2">LEER XML</button>
+            </form>
+        </div>
+    </main>
+    
+    <footer>
+        <strong>
+            <p>¡SIGUÉNOS Ó CONTACTANOS!</p>
+        </strong>
+        <table id="Contacto-redes">
+            <tr>
+                <td class="redes-sociales">
+                    <a href="https://www.facebook.com/profile.php?id=100075959743013">
+                        <img src="/img/fb.png" alt="Facebook">
+                    </a>
+                </td>
+                <td class="redes-sociales">
+                    <a href="https://www.instagram.com/loo.pday/">
+                        <img src="/img/ig.png" alt="Instagram">
+                    </a>
+                </td>
+                <td class="redes-sociales">
+                    <a href="https://twitter.com/wuiz_zp">
+                        <img src="/img/x.png" alt="X/Twitter">
+                    </a>
+                </td>
+                <td class="redes-sociales">
+                    <a href="https://wa.me/5583526554">
+                        <img src="/img/wa.png" alt="Whatsapp">
+                    </a>
+                </td>
+
+            </tr>
+        </table>
+        © 2023 SEACE. Todos los Derechos Reservados. <br> Hecho con ❤ por WZ & AC
+    </footer>
 </body>
+
 </html>

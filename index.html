@@ -46,7 +46,7 @@
             .then(data => {
                 console.log(data.message); // Aquí se verá el mensaje de inicio de sesión exitoso
                 if (data.message === 'Inicio de sesión exitoso') {
-                window.location.href = '/overview.html'; // Cambia '/dashboard' a la URL deseada para redirigir al usuario.
+                window.location.href = 'overview.html';
             }
             })
             .catch(error => {
