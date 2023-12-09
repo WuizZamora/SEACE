@@ -1,3 +1,6 @@
 -- CREATE TABLE Prueba (id INT);
 
-SELECT * FROM Cliente
+SELECT * FROM Usuarios
+
+DROP TABLE Prueba
+
