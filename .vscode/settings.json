@@ -1,0 +1,10 @@
+{
+    "sqltools.connections": [
+        {
+            "driver": "SQLite",
+            "name": "SEACEdb",
+            "database": "${workspaceFolder:SEACE}/web/db/base.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
