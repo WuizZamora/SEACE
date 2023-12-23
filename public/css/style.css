@@ -28,6 +28,17 @@ header {
     text-align: center; /* Centra los elementos en pantallas pequeñas */
 }
 
+.form-container {
+    display: flex; /* Utiliza un contenedor flexbox para alinear los formularios */
+}
+
+/* Estilo para los formularios */
+#xmlUpload, #pdfUpload {
+    display: inline-block; /* Mostrar los formularios en línea */
+    margin-right: 20px; /* Agregar espacio horizontal entre los formularios */
+}
+
+
 .submenu__item{
     list-style: none;
 }

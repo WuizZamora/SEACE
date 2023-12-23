@@ -10,11 +10,16 @@
 <body>
     <main>
         <h1 class="h3 mb-3 fw-normal text-center"> INTERFAZ DE INSERCIÓN DE CLIENTE </h1>
-        <div class=" d-flex justify-content-center">
+        <div class=" d-flex justify-content-center form container">
             <form id="xmlUpload" action="/insertarCliente" method="post" enctype="multipart/form-data">
                 <input type="file" name="xml" multiple required>
                 <br><br>
                 <button type="submit" class="btn btn-primary w-100 py-2">EXTRAER DATOS DEL XML</button>
+            </form>
+            <form id="pdfUpload" action="/insertarClientePDF" method="post" enctype="multipart/form-data">
+                <input type="file" name="pdf" multiple required>
+                <br><br>
+                <button type="submit" class="btn btn-primary w-100 py-2">EXTRAER DATOS DEL PDF</button>
             </form>
         </div>
     </main>
