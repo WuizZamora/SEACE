@@ -17,6 +17,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
 
 /* CONEXIÓN A LA BASE DE DATOS */
 const db_name = path.join(__dirname, '/web/db', 'base.db');
@@ -184,8 +185,9 @@ app.post('/upload', upload.single('xml'), (req, res) => {
 
 
 /* INSERTAR CLIENTE DESDE XML */
-app.post('/insertarCliente', upload.array('xml'), (req, res) => {
+app.post('/extraerCliente', upload.array('xml'), (req, res) => {
     const files = req.files;
+    const resultados = [];
     // Iterar sobre cada archivo
     files.forEach((file, index) => {
         const xml = file.buffer.toString();
@@ -199,25 +201,47 @@ app.post('/insertarCliente', upload.array('xml'), (req, res) => {
               const receptor = result['cfdi:Comprobante']['cfdi:Receptor'];
                 const receptorRFC = receptor.$.Rfc;
                 const receptorNombre = receptor.$.Nombre;
-
+                
                 console.log(`DATOS DEL CLIENTE (${index + 1}):`);
                 console.log('Receptor RFC:', receptorRFC);
                 console.log('Receptor Nombre:', receptorNombre);
                 console.log('-------------------------------------------');
 
-                // Insertar en la base de datos
-                db.run('INSERT INTO Cliente (nombre, rfc) VALUES (?, ?)', [receptorNombre, receptorRFC], function (err) {
-                    if (err) {
-                        console.error(`Error al insertar en la base de datos (${index + 1}):`, err);
-                    } else {
-                        console.log(`Se ha insertado un nuevo Cliente en la Base de datos (${index + 1})`);
-                    }
-                });
+                resultados.push({ receptorRFC, receptorNombre });
+
+                // res.json({receptorRFC, receptorNombre});
+
+                if (index === files.length - 1) {
+                    // Enviar resultados al frontend cuando se hayan procesado todos los archivos
+                    res.json(resultados);
+                }
+                
             }
         });
     });
 
-    res.status(200).json({ message: 'Archivos procesados exitosamente' });
+    // res.status(200).json({ message: 'Archivos procesados exitosamente' });
+});
+
+app.post('/insertarCliente', (req, res) => {
+    console.log(req.body); // Agrega esta línea para verificar el contenido de req.body
+    const data = Array.isArray(req.body) ? req.body : [req.body];
+
+    // Iterar sobre los datos y realizar la inserción en la base de datos
+    data.forEach((cliente, index) => {
+        const { receptorNombre, receptorRFC } = cliente;
+    
+        // Insertar en la base de datos
+        db.run('INSERT INTO Cliente (nombre, rfc) VALUES (?, ?)', [receptorNombre, receptorRFC], function (err) {
+            if (err) {
+                console.error(`Error al insertar en la base de datos (${index + 1}):`, err);
+            } else {
+                console.log(`Se ha insertado un nuevo Cliente en la Base de datos (${index + 1})`);
+            }
+        });
+    });
+
+    res.send('Éxito en la inserción en la base de datos');
 });
 
 /* INSERTAR CLIENTE DESDE PDF */

@@ -38,6 +38,17 @@ header {
     margin-right: 20px; /* Agregar espacio horizontal entre los formularios */
 }
 
+.rfc-input-container{
+    display: flex;
+    width: 60%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.container{
+    padding: 2em;
+}
 
 .submenu__item{
     list-style: none;

@@ -66,4 +66,4 @@
 --     FOREIGN KEY (FacturaID) REFERENCES Facturas(ID)
 -- );
 
-DELETE FROM Conceptos
+DELETE FROM Cliente
