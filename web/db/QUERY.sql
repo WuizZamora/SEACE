@@ -1,37 +1,32 @@
--- DROP TABLE ClienteCSF
--- CREATE TABLE IF NOT EXISTS ClienteCSF(
---     nombre VARCHAR(50) NOT NULL,
---     rfc VARCHAR(13) NOT NULL PRIMARY KEY,
---     regimen VARCHAR(150) NOT NULL
--- )
+-- CREATE TABLE Usuario(
+--     rfcEmisor VARCHAR(13) NOT NULL,
+--     usuario VARCHAR(20) NOT NULL,
+--     pass VARCHAR(20) NOT NULL
+-- );
 
--- DELETE FROM Cliente
+-- INSERT INTO Usuario VALUES ('ZAPL0108266K0', 'Wuiz', '123')
 
--- DROP TABLE Usuarios
+-- CREATE TABLE Cliente(
+--     rfcReceptor VARCHAR(13) NOT NULL PRIMARY KEY,
+--     nombre VARCHAR(100) NOT NULL,
+--     regimen VARCHAR(255) NOT NULL
+-- );
 
--- CREATE table if not EXISTS Usuario (
---     usuario varchar (20) NOT NULL,
---     pass varchar(20) NOT NULL,
---     rfc  varchar(13) not null PRIMARY KEY
--- )
-
--- INSERT into Usuario values ('Wuiz','123','ZAPL0108266K0')
+DROP TABLE Usuario
 
 -- CREATE TABLE Facturas (
---     ID INTEGER PRIMARY KEY,
+--     ID INT PRIMARY KEY AUTOINCREMENT,
 --     Folio VARCHAR(10),
 --     Fecha DATE,
 --     Subtotal DECIMAL(10, 2),
 --     Total DECIMAL(10, 2),
 --     TipoComprobante CHAR(1),
---     EmisorRFC VARCHAR(13),
---     ReceptorRFC VARCHAR(13),
---     UUID VARCHAR(36), -- Considerando el UUID como VARCHAR por su longitud
---     FOREIGN KEY (EmisorRFC) REFERENCES Cliente(RFC)
---     -- Se comenta la línea de la clave foránea que genera conflicto
---     -- FOREIGN KEY (ReceptorRFC) REFERENCES Clientes(RFC)
+--     rfcEmisor VARCHAR(13),
+--     rfcReceptor VARCHAR(13),
+--     UUID VARCHAR(50), -- Considerando el UUID como VARCHAR por su longitud
+--     FOREIGN KEY (rfcEmisor) REFERENCES Usuario(rfcEmisor)
+--     FOREIGN KEY (rfcReceptor) REFERENCES Clientes(rfcReceptot)
 -- );
-
 
 -- -- Tabla de Conceptos
 -- CREATE TABLE Conceptos (
@@ -66,4 +61,4 @@
 --     FOREIGN KEY (FacturaID) REFERENCES Facturas(ID)
 -- );
 
-DELETE FROM Cliente
+-- DELETE FROM Usuario
