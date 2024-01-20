@@ -10,8 +10,8 @@
 <body>
     <main>
         <h1 class="h3 mb-3 fw-normal text-center"> INTERFAZ DE INSERCIÓN DE CLIENTE </h1>
-        <div class=" d-flex justify-content-center form container">
-            <form id="xmlUpload" action="/insertarCliente" method="post" enctype="multipart/form-data">
+        <div class=" d-flex justify-content-center form-container">
+            <form id="xmlUpload" action="/extraerCliente" method="post" enctype="multipart/form-data">
                 <input type="file" name="xml" multiple required>
                 <br><br>
                 <button type="submit" class="btn btn-primary w-100 py-2">EXTRAER DATOS DEL XML</button>
@@ -22,6 +22,101 @@
                 <button type="submit" class="btn btn-primary w-100 py-2">EXTRAER DATOS DEL PDF</button>
             </form>
         </div>
+        <form action="/insertarCliente" method="post" enctype="multipart/form-data" id="miFormulario" >
+    
+            <div class="container"></div>
+            <button type="submit" class="btn btn-primary w-100 py-2">Guardar</button>
+        </form>
     </main>
+            
+    <script>
+     document.addEventListener('DOMContentLoaded', () => {
+    // Seleccionar el formulario adecuado
+    const form = document.getElementById('xmlUpload');
+    const container = document.querySelector('.container');
+
+    // Almacena los datos del formulario después de la extracción
+    let formDataAfterExtraction;
+
+    // Manejar la presentación del formulario
+    form.addEventListener('submit', (event) => {
+        event.preventDefault(); // Evitar la recarga de la página
+
+        // Realizar una solicitud al backend
+        fetch('/extraerCliente', {
+            method: 'POST',
+            body: new FormData(form),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Almacena los datos después de la extracción
+            formDataAfterExtraction = data;
+
+            // Limpiar el contenedor
+            container.innerHTML = '';
+
+            // Iterar sobre los resultados y mostrar en los campos de entrada
+            data.forEach((result, index) => {
+                const title = document.createElement('h5');
+                title.textContent = `DATOS DEL CLIENTE ${index + 1}:`;
+                container.appendChild(title);
+
+                // RFC
+                const rfcTitle = document.createElement('span');
+                rfcTitle.textContent = 'RFC: ';
+                container.appendChild(rfcTitle);
+
+                const rfcInput = document.createElement('input');
+                rfcInput.type = 'text';
+                rfcInput.value = result.receptorRFC;
+                rfcInput.maxLength = 13; // Limitar a 13 caracteres
+                rfcInput.className = 'rfc-input-container';
+                rfcInput.id='rfc-input'
+                container.appendChild(rfcInput);
+
+                // Agregar un espacio en blanco entre cada par de campos
+                const space = document.createElement('br');
+                container.appendChild(space);
+
+                // NOMBRE
+                const nombreTitle = document.createElement('span');
+                nombreTitle.textContent = 'Nombre: ';
+                container.appendChild(nombreTitle);
+
+                const nombreInput = document.createElement('input');
+                nombreInput.type = 'text';
+                nombreInput.value = result.receptorNombre;
+                nombreInput.maxLength = 50; // Limitar a 50 caracteres
+                nombreInput.className = 'rfc-input-container';
+                nombreInput.id = 'nombre-input'
+                container.appendChild(nombreInput);
+
+                // Agregar un espacio en blanco entre cada par de campos
+                container.appendChild(space);
+            });
+
+            // Mostrar el botón de guardar después de procesar todos los resultados
+            guardarBtn.style.display = 'block';
+        })
+        .catch(error => console.error('Error al obtener datos:', error));
+    });
+    document.getElementById('miFormulario').addEventListener('submit', function (event) {
+      event.preventDefault(); // Evitar el comportamiento predeterminado del formulario
+    
+    const nombreModificado=document.getElementById(nombreInput).value;
+    fetch('/insertarCliente', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ nombreModificado }),
+      })
+      .then(response => response.json())
+        .catch(error => console.error('Error:', error));
+    });
+});
+
+    </script>
+
 </body>
 </html>
